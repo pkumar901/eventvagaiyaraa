@@ -48,7 +48,7 @@ const works = [
 
 const filters = ["All", "Corporate", "Weddings", "Social Events", "Exhibitions"];
 
-const clients = ["Google", "TATA", "Microsoft", "SAMSUNG", "adidas", "Coca-Cola"];
+const clients = ["ZENKO STREETWEAR", "NextBright Solutions", "INFRA TECH", "NEXTWE TECHNOLOGY", "KMCH Hospitals", "PSG Tech"];
 
 const testimonials = [
   { img: t1, name: "Karthik Subramanian", role: "Marketing Head, Pricol", text: "Event Vagaiyaraa made our corporate launch in Coimbatore a huge success. Professionalism and attention to detail are impeccable." },
@@ -239,6 +239,48 @@ function Index() {
         </div>
       </section>
 
+      {/* INSTAGRAM FEED */}
+      <section id="instagram" className="py-20 md:py-28 bg-background">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <p className="section-label">@EVENT_VAGAIYARAA</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mt-3">Follow Us On Instagram</h2>
+          <p className="mt-4 text-muted-foreground">Live updates from our latest events across Coimbatore</p>
+          <div className="mt-10 rounded-lg overflow-hidden shadow-card border max-w-xl mx-auto bg-card">
+            <iframe
+              src="https://www.instagram.com/event_vagaiyaraa/embed"
+              title="Event Vagaiyaraa Instagram Feed"
+              loading="lazy"
+              className="w-full"
+              style={{ height: 720, border: 0 }}
+              scrolling="no"
+              allowTransparency
+            />
+          </div>
+          <a href="https://www.instagram.com/event_vagaiyaraa" target="_blank" rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 bg-gold text-gold-foreground px-7 py-3 text-xs font-semibold tracking-widest rounded hover:opacity-90 transition">
+            <Instagram className="h-4 w-4" /> VIEW ON INSTAGRAM
+          </a>
+        </div>
+      </section>
+
+      {/* LOCATION MAP */}
+      <section id="location" className="bg-dark text-dark-foreground py-20">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <p className="section-label">FIND US</p>
+          <h2 className="font-display text-4xl md:text-5xl font-bold mt-3">Based in Coimbatore</h2>
+          <p className="mt-4 text-white/70">Serving across Tamil Nadu and South India</p>
+          <div className="mt-10 rounded-lg overflow-hidden shadow-gold border border-white/10">
+            <iframe
+              title="Event Vagaiyaraa Coimbatore Location"
+              src="https://www.google.com/maps?q=Coimbatore,Tamil+Nadu,India&output=embed"
+              loading="lazy"
+              className="w-full h-[420px] border-0"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT / FOOTER */}
       <footer id="contact" className="bg-dark text-dark-foreground pt-16 pb-6">
         <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-3 gap-10">
@@ -270,8 +312,13 @@ function Index() {
               <li className="flex items-center gap-3"><Pin className="h-4 w-4 text-gold" /> Coimbatore, Tamil Nadu, India</li>
             </ul>
             <div className="mt-5 flex gap-3">
-              {[Facebook, Instagram, Linkedin, Youtube].map((Icon, i) => (
-                <a key={i} href="#" className="h-9 w-9 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gold hover:text-gold-foreground hover:border-gold transition">
+              {[
+                { Icon: Instagram, href: "https://www.instagram.com/event_vagaiyaraa" },
+                { Icon: Facebook, href: "#" },
+                { Icon: Linkedin, href: "#" },
+                { Icon: Youtube, href: "#" },
+              ].map(({ Icon, href }, i) => (
+                <a key={i} href={href} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-gold hover:text-gold-foreground hover:border-gold transition">
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
